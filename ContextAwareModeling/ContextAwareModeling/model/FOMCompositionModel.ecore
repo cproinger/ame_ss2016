@@ -10,6 +10,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="RemoteFiring">
     <eStructuralFeatures xsi:type="ecore:EReference" name="firedBy" lowerBound="1"
         eType="ecore:EClass ManagerModel.ecore#//Transition"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="fired" lowerBound="1" eType="ecore:EClass ManagerModel.ecore#//Transition"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="firing" lowerBound="1"
+        eType="ecore:EClass ManagerModel.ecore#//Transition"/>
   </eClassifiers>
 </ecore:EPackage>

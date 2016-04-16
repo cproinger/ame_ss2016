@@ -8,6 +8,7 @@
   <semanticResources>ManagerModel.genmodel</semanticResources>
   <semanticResources>../xmi/DoctorLocation.xmi</semanticResources>
   <semanticResources>../xmi/CPUMode.xmi</semanticResources>
+  <semanticResources>../xmi/ContextManager.xmi</semanticResources>
   <ownedViews xmi:type="viewpoint:DRepresentationContainer" xmi:id="_WYcgsP5oEeWGw44-Nh5CSQ">
     <ownedRepresentations xmi:type="diagram:DSemanticDiagram" xmi:id="_55gJkAL2Eea7dZJTeMSZjw" name="FOMCompositionModel class diagram">
       <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_55gJkQL2Eea7dZJTeMSZjw" source="DANNOTATION_CUSTOMIZATION_KEY">
@@ -475,9 +476,9 @@
         </ownedStyle>
         <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC_EReference']"/>
       </ownedDiagramElements>
-      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_Lf6lkAPGEealR4r9dswWtA" name="[1..1] fired" sourceNode="_BLZo0APGEealR4r9dswWtA" targetNode="_j56EsAPFEealR4r9dswWtA">
-        <target xmi:type="ecore:EReference" href="FOMCompositionModel.ecore#//RemoteFiring/fired"/>
-        <semanticElements xmi:type="ecore:EReference" href="FOMCompositionModel.ecore#//RemoteFiring/fired"/>
+      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_Lf6lkAPGEealR4r9dswWtA" name="[1..1] firing" sourceNode="_BLZo0APGEealR4r9dswWtA" targetNode="_j56EsAPFEealR4r9dswWtA">
+        <target xmi:type="ecore:EReference" href="FOMCompositionModel.ecore#//RemoteFiring/firing"/>
+        <semanticElements xmi:type="ecore:EReference" href="FOMCompositionModel.ecore#//RemoteFiring/firing"/>
         <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_NJQh8APGEealR4r9dswWtA" description="_kyM-oQPFEealR4r9dswWtA" routingStyle="manhattan" strokeColor="0,0,0">
           <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_NJQh8QPGEealR4r9dswWtA" showIcon="false">
             <labelFormat>bold</labelFormat>
