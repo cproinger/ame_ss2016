@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/ContextAwareModeling/src" modelPluginID="ContextAwareModeling"
+    modelName="FOMCompositionModel" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0" copyrightFields="false"
+    usedGenPackages="ManagerModel.genmodel#//ManagerModel" operationReflection="true"
+    importOrganizing="true">
+  <foreignModel>FOMCompositionModel.ecore</foreignModel>
+  <genPackages prefix="FOMCompositionModel" basePackage="fcm" disposableProviderFactory="true"
+      ecorePackage="FOMCompositionModel.ecore#/">
+    <genClasses ecoreClass="FOMCompositionModel.ecore#//ContextManager">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FOMCompositionModel.ecore#//ContextManager/manager"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FOMCompositionModel.ecore#//ContextManager/remotefiring"/>
+    </genClasses>
+    <genClasses ecoreClass="FOMCompositionModel.ecore#//RemoteFiring">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference FOMCompositionModel.ecore#//RemoteFiring/firedBy"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference FOMCompositionModel.ecore#//RemoteFiring/firing"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>
