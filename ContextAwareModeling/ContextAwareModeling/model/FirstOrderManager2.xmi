@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<fom:FirstOrderManager xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:fom="at.ac.tuwien.ame.ss2016.cacps" xsi:schemaLocation="at.ac.tuwien.ame.ss2016.cacps FirstOrderManagerModel.ecore">
-  <states name="s3">
-    <action xsi:type="fom:PassiveAction" targetState="s4"/>
-  </states>
-  <states name="s4">
-    <action xsi:type="fom:PassiveAction" targetState="s3"/>
-  </states>
-</fom:FirstOrderManager>

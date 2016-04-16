@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<man:Manager
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:man="at.ac.tuwien.ame.ss2016.man"
+    xsi:schemaLocation="at.ac.tuwien.ame.ss2016.man ../model/ManagerModel.ecore"
+    name="Doctors Location First-Order-Manager"
+    start="Home">
+  <states name="Home">
+    <transitions
+        name="leaving home"
+        targetState="OpenAir_hs"
+        rate="12.0"/>
+  </states>
+  <states name="OpenAir_hs">
+    <transitions
+        name="going_to_work"
+        targetState="Surgery"
+        probability="0.3"/>
+  </states>
+  <states name="Surgery">
+    <transitions
+        name="leaving_surgery_to_assist_patients"
+        targetState="PatientHome"
+        rate="3.0"
+        guard=""/>
+    <transitions
+        name="leaving_surgery_to_go_home"
+        targetState="OpenAir_sh"
+        rate="3.0"/>
+  </states>
+  <states name="OpenAir_sp">
+    <transitions
+        name="going_to_patients"
+        targetState="PatientHome"
+        rate="4.0"/>
+  </states>
+  <states name="PatientHome">
+    <transitions
+        name="leaving_patients_home"
+        targetState="OpenAir_ps"
+        rate="3.0"/>
+  </states>
+  <states name="OpenAir_ps">
+    <transitions
+        name="going_back_to_work"
+        targetState="Surgery"
+        rate="4.0"/>
+  </states>
+  <states name="OpenAir_sh">
+    <transitions
+        name="going_back_home"
+        targetState="Home"
+        rate="4.0"/>
+  </states>
+</man:Manager>
