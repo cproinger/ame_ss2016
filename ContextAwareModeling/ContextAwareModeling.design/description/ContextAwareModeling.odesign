@@ -12,7 +12,7 @@
             </centerLabelStyleDescription>
           </style>
         </edgeMappings>
-        <containerMappings name="stateNode" domainClass="ManagerModel.State">
+        <containerMappings name="stateNode" semanticCandidatesExpression="feature:eAllContents" domainClass="ManagerModel.State">
           <style xsi:type="style:FlatContainerStyleDescription" showIcon="false" roundedCorner="true">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
