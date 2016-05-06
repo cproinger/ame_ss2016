@@ -15,6 +15,7 @@ import mm.ManagerModel.Transition;
  * The following features are tested:
  * <ul>
  *   <li>{@link mm.ManagerModel.Transition#getRateOrProb() <em>Rate Or Prob</em>}</li>
+ *   <li>{@link mm.ManagerModel.Transition#getDescription() <em>Description</em>}</li>
  * </ul>
  * </p>
  * @generated
@@ -81,6 +82,19 @@ public class TransitionTest extends NamedElementTest {
 	 * @generated
 	 */
 	public void testGetRateOrProb() {
+		// TODO: implement this feature getter test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link mm.ManagerModel.Transition#getDescription() <em>Description</em>}' feature getter.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see mm.ManagerModel.Transition#getDescription()
+	 * @generated
+	 */
+	public void testGetDescription() {
 		// TODO: implement this feature getter test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();

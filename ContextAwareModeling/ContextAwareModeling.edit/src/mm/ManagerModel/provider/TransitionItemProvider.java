@@ -50,6 +50,7 @@ public class TransitionItemProvider extends NamedElementItemProvider {
 			addProbabilityPropertyDescriptor(object);
 			addGuardPropertyDescriptor(object);
 			addRateOrProbPropertyDescriptor(object);
+			addDescriptionPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -165,6 +166,28 @@ public class TransitionItemProvider extends NamedElementItemProvider {
 	}
 
 	/**
+	 * This adds a property descriptor for the Description feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addDescriptionPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Transition_description_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Transition_description_feature", "_UI_Transition_type"),
+				 ManagerModelPackage.Literals.TRANSITION__DESCRIPTION,
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This returns Transition.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -206,6 +229,7 @@ public class TransitionItemProvider extends NamedElementItemProvider {
 			case ManagerModelPackage.TRANSITION__PROBABILITY:
 			case ManagerModelPackage.TRANSITION__GUARD:
 			case ManagerModelPackage.TRANSITION__RATE_OR_PROB:
+			case ManagerModelPackage.TRANSITION__DESCRIPTION:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

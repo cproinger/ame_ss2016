@@ -261,13 +261,22 @@ public interface ManagerModelPackage extends EPackage {
 	int TRANSITION__RATE_OR_PROB = NAMED_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRANSITION__DESCRIPTION = NAMED_ELEMENT_FEATURE_COUNT + 5;
+
+	/**
 	 * The number of structural features of the '<em>Transition</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 5;
+	int TRANSITION_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The number of operations of the '<em>Transition</em>' class.
@@ -396,6 +405,17 @@ public interface ManagerModelPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getTransition_RateOrProb();
+
+	/**
+	 * Returns the meta object for the attribute '{@link mm.ManagerModel.Transition#getDescription <em>Description</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Description</em>'.
+	 * @see mm.ManagerModel.Transition#getDescription()
+	 * @see #getTransition()
+	 * @generated
+	 */
+	EAttribute getTransition_Description();
 
 	/**
 	 * Returns the meta object for class '{@link mm.ManagerModel.NamedElement <em>Named Element</em>}'.
@@ -534,6 +554,14 @@ public interface ManagerModelPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute TRANSITION__RATE_OR_PROB = eINSTANCE.getTransition_RateOrProb();
+
+		/**
+		 * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute TRANSITION__DESCRIPTION = eINSTANCE.getTransition_Description();
 
 		/**
 		 * The meta object literal for the '{@link mm.ManagerModel.impl.NamedElementImpl <em>Named Element</em>}' class.

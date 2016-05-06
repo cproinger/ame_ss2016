@@ -27,6 +27,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link mm.ManagerModel.impl.TransitionImpl#getProbability <em>Probability</em>}</li>
  *   <li>{@link mm.ManagerModel.impl.TransitionImpl#getGuard <em>Guard</em>}</li>
  *   <li>{@link mm.ManagerModel.impl.TransitionImpl#getRateOrProb <em>Rate Or Prob</em>}</li>
+ *   <li>{@link mm.ManagerModel.impl.TransitionImpl#getDescription <em>Description</em>}</li>
  * </ul>
  *
  * @generated
@@ -111,6 +112,16 @@ public class TransitionImpl extends NamedElementImpl implements Transition {
 	 * @ordered
 	 */
 	protected EStructuralFeature.Internal.SettingDelegate RATE_OR_PROB__ESETTING_DELEGATE = ((EStructuralFeature.Internal)ManagerModelPackage.Literals.TRANSITION__RATE_OR_PROB).getSettingDelegate();
+
+	/**
+	 * The cached setting delegate for the '{@link #getDescription() <em>Description</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDescription()
+	 * @generated
+	 * @ordered
+	 */
+	protected EStructuralFeature.Internal.SettingDelegate DESCRIPTION__ESETTING_DELEGATE = ((EStructuralFeature.Internal)ManagerModelPackage.Literals.TRANSITION__DESCRIPTION).getSettingDelegate();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -246,6 +257,15 @@ public class TransitionImpl extends NamedElementImpl implements Transition {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getDescription() {
+		return (String)DESCRIPTION__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -260,6 +280,8 @@ public class TransitionImpl extends NamedElementImpl implements Transition {
 				return getGuard();
 			case ManagerModelPackage.TRANSITION__RATE_OR_PROB:
 				return getRateOrProb();
+			case ManagerModelPackage.TRANSITION__DESCRIPTION:
+				return getDescription();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -330,6 +352,8 @@ public class TransitionImpl extends NamedElementImpl implements Transition {
 				return GUARD_EDEFAULT == null ? guard != null : !GUARD_EDEFAULT.equals(guard);
 			case ManagerModelPackage.TRANSITION__RATE_OR_PROB:
 				return RATE_OR_PROB__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
+			case ManagerModelPackage.TRANSITION__DESCRIPTION:
+				return DESCRIPTION__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 		}
 		return super.eIsSet(featureID);
 	}
