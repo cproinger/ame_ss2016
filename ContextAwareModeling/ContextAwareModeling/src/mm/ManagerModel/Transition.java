@@ -16,6 +16,7 @@ package mm.ManagerModel;
  *   <li>{@link mm.ManagerModel.Transition#getRate <em>Rate</em>}</li>
  *   <li>{@link mm.ManagerModel.Transition#getProbability <em>Probability</em>}</li>
  *   <li>{@link mm.ManagerModel.Transition#getGuard <em>Guard</em>}</li>
+ *   <li>{@link mm.ManagerModel.Transition#getRateOrProb <em>Rate Or Prob</em>}</li>
  * </ul>
  *
  * @see mm.ManagerModel.ManagerModelPackage#getTransition()
@@ -127,5 +128,21 @@ public interface Transition extends NamedElement {
 	 * @generated
 	 */
 	void setGuard(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Rate Or Prob</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Rate Or Prob</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Rate Or Prob</em>' attribute.
+	 * @see mm.ManagerModel.ManagerModelPackage#getTransition_RateOrProb()
+	 * @model required="true" transient="true" changeable="false" derived="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot derivation='\n\t\t\tif(rate <> null) then \'{rate: \' + rate.toString() + \'}\' \n\t\t\telse if(probability <> null) then \'{prob: \' + probability.toString() + \'}\' else \'\' endif\n\t\t\tendif'"
+	 * @generated
+	 */
+	String getRateOrProb();
 
 } // Transition

@@ -219,6 +219,15 @@ public class ManagerModelPackageImpl extends EPackageImpl implements ManagerMode
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getTransition_RateOrProb() {
+		return (EAttribute)transitionEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getNamedElement() {
 		return namedElementEClass;
 	}
@@ -272,6 +281,7 @@ public class ManagerModelPackageImpl extends EPackageImpl implements ManagerMode
 		createEAttribute(transitionEClass, TRANSITION__RATE);
 		createEAttribute(transitionEClass, TRANSITION__PROBABILITY);
 		createEAttribute(transitionEClass, TRANSITION__GUARD);
+		createEAttribute(transitionEClass, TRANSITION__RATE_OR_PROB);
 
 		namedElementEClass = createEClass(NAMED_ELEMENT);
 		createEAttribute(namedElementEClass, NAMED_ELEMENT__NAME);
@@ -322,6 +332,7 @@ public class ManagerModelPackageImpl extends EPackageImpl implements ManagerMode
 		initEAttribute(getTransition_Rate(), ecorePackage.getEFloatObject(), "rate", null, 0, 1, Transition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTransition_Probability(), ecorePackage.getEDoubleObject(), "probability", null, 0, 1, Transition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTransition_Guard(), ecorePackage.getEString(), "guard", null, 0, 1, Transition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getTransition_RateOrProb(), ecorePackage.getEString(), "rateOrProb", null, 1, 1, Transition.class, IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		initEClass(namedElementEClass, NamedElement.class, "NamedElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getNamedElement_Name(), ecorePackage.getEString(), "name", null, 1, 1, NamedElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -404,6 +415,12 @@ public class ManagerModelPackageImpl extends EPackageImpl implements ManagerMode
 		   source, 
 		   new String[] {
 			 "EitherRateOrProbability", "rate.oclIsUndefined() xor probability.oclIsUndefined()"
+		   });	
+		addAnnotation
+		  (getTransition_RateOrProb(), 
+		   source, 
+		   new String[] {
+			 "derivation", "\n\t\t\tif(rate <> null) then \'{rate: \' + rate.toString() + \'}\' \n\t\t\telse if(probability <> null) then \'{prob: \' + probability.toString() + \'}\' else \'\' endif\n\t\t\tendif"
 		   });
 	}
 

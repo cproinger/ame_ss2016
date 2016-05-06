@@ -9,6 +9,7 @@ import mm.ManagerModel.Transition;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
@@ -25,6 +26,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link mm.ManagerModel.impl.TransitionImpl#getRate <em>Rate</em>}</li>
  *   <li>{@link mm.ManagerModel.impl.TransitionImpl#getProbability <em>Probability</em>}</li>
  *   <li>{@link mm.ManagerModel.impl.TransitionImpl#getGuard <em>Guard</em>}</li>
+ *   <li>{@link mm.ManagerModel.impl.TransitionImpl#getRateOrProb <em>Rate Or Prob</em>}</li>
  * </ul>
  *
  * @generated
@@ -99,6 +101,16 @@ public class TransitionImpl extends NamedElementImpl implements Transition {
 	 * @ordered
 	 */
 	protected String guard = GUARD_EDEFAULT;
+
+	/**
+	 * The cached setting delegate for the '{@link #getRateOrProb() <em>Rate Or Prob</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRateOrProb()
+	 * @generated
+	 * @ordered
+	 */
+	protected EStructuralFeature.Internal.SettingDelegate RATE_OR_PROB__ESETTING_DELEGATE = ((EStructuralFeature.Internal)ManagerModelPackage.Literals.TRANSITION__RATE_OR_PROB).getSettingDelegate();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -225,6 +237,15 @@ public class TransitionImpl extends NamedElementImpl implements Transition {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getRateOrProb() {
+		return (String)RATE_OR_PROB__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -237,6 +258,8 @@ public class TransitionImpl extends NamedElementImpl implements Transition {
 				return getProbability();
 			case ManagerModelPackage.TRANSITION__GUARD:
 				return getGuard();
+			case ManagerModelPackage.TRANSITION__RATE_OR_PROB:
+				return getRateOrProb();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -305,6 +328,8 @@ public class TransitionImpl extends NamedElementImpl implements Transition {
 				return PROBABILITY_EDEFAULT == null ? probability != null : !PROBABILITY_EDEFAULT.equals(probability);
 			case ManagerModelPackage.TRANSITION__GUARD:
 				return GUARD_EDEFAULT == null ? guard != null : !GUARD_EDEFAULT.equals(guard);
+			case ManagerModelPackage.TRANSITION__RATE_OR_PROB:
+				return RATE_OR_PROB__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 		}
 		return super.eIsSet(featureID);
 	}

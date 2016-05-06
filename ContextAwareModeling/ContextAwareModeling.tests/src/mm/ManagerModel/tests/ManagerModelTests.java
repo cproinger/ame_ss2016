@@ -31,6 +31,7 @@ public class ManagerModelTests extends TestSuite {
 	 */
 	public static Test suite() {
 		TestSuite suite = new ManagerModelTests("ManagerModel Tests");
+		suite.addTestSuite(TransitionTest.class);
 		return suite;
 	}
 

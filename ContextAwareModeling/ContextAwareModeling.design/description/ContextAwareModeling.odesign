@@ -7,7 +7,7 @@
         <edgeMappings name="transitionEdge" sourceMapping="//@ownedViewpoints[name='managermodel']/@ownedRepresentations[name='managerModelDiagram']/@defaultLayer/@containerMappings[name='stateNode']" targetMapping="//@ownedViewpoints[name='managermodel']/@ownedRepresentations[name='managerModelDiagram']/@defaultLayer/@containerMappings[name='stateNode']" targetFinderExpression="feature:targetState" sourceFinderExpression="feature:eContainer" domainClass="ManagerModel.Transition" useDomainElement="true">
           <style sizeComputationExpression="2" endsCentering="Both">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
-            <centerLabelStyleDescription showIcon="false" labelExpression="[self.name + '\n { rate: ' + self.rate + ' }'/]">
+            <centerLabelStyleDescription showIcon="false" labelExpression="[self.name + '\n' + self.rateOrProb + ''/]">
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             </centerLabelStyleDescription>
           </style>

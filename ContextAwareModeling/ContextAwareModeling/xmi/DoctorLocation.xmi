@@ -17,7 +17,7 @@
     <transitions
         name="going_to_work"
         targetState="Surgery"
-        probability="0.3"/>
+        probability="1.0"/>
   </states>
   <states name="Surgery">
     <transitions

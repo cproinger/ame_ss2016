@@ -4,12 +4,11 @@ Bundle-Name: %pluginName
 Bundle-SymbolicName: ContextAwareModeling.edit;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-ClassPath: .
-Bundle-Activator: fcm.FOMCompositionModel.provider.FOMCompositionModelEditPlugin$Implementation
+Bundle-Activator: mm.ManagerModel.provider.ManagerModelEditPlugin$Implementation
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
-Export-Package: 
- mm.ManagerModel.provider,
+Export-Package: mm.ManagerModel.provider,
  fcm.FOMCompositionModel.provider
 Require-Bundle: org.eclipse.core.runtime,
  ContextAwareModeling;visibility:=reexport,
