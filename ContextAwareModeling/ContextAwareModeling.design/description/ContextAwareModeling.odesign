@@ -23,4 +23,44 @@
       </defaultLayer>
     </ownedRepresentations>
   </ownedViewpoints>
+  <ownedViewpoints name="fomcompositionmodel" modelFileExtension="fomcompositionmodel">
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="fomcompositionmodelDiagram" domainClass="FOMCompositionModel.ContextManager" enablePopupBars="true">
+      <metamodel href="at.ac.tuwien.ame.ss2016.fcm#/"/>
+      <metamodel href="at.ac.tuwien.ame.ss2016.man#/"/>
+      <defaultLayer name="Default">
+        <edgeMappings name="transitionEdge2" sourceMapping="//@ownedViewpoints[name='fomcompositionmodel']/@ownedRepresentations[name='fomcompositionmodelDiagram']/@defaultLayer/@containerMappings[name='managerNode']/@subContainerMappings[name='stateNode2']" targetMapping="//@ownedViewpoints[name='fomcompositionmodel']/@ownedRepresentations[name='fomcompositionmodelDiagram']/@defaultLayer/@containerMappings[name='managerNode']/@subContainerMappings[name='stateNode2']" targetFinderExpression="feature:targetState" sourceFinderExpression="feature:eContainer" domainClass="ManagerModel.Transition" useDomainElement="true">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription labelExpression="[self.name + '\n' + self.rateOrProb + ''/]">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="remoteFiringEdge" sourceMapping="//@ownedViewpoints[name='fomcompositionmodel']/@ownedRepresentations[name='fomcompositionmodelDiagram']/@defaultLayer/@edgeMappings[name='transitionEdge2']" targetMapping="//@ownedViewpoints[name='fomcompositionmodel']/@ownedRepresentations[name='fomcompositionmodelDiagram']/@defaultLayer/@edgeMappings[name='transitionEdge2']" targetFinderExpression="feature:firedBy" sourceFinderExpression="feature:firing" domainClass="FOMCompositionModel.RemoteFiring" useDomainElement="true">
+          <style lineStyle="dash" sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <centerLabelStyleDescription labelExpression="fired by">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <containerMappings name="managerNode" semanticCandidatesExpression="feature:eAllContents" domainClass="ManagerModel.Manager">
+          <subContainerMappings name="stateNode2" semanticCandidatesExpression="feature:eAllContents" domainClass="ManagerModel.State">
+            <style xsi:type="style:FlatContainerStyleDescription">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_yellow']"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subContainerMappings>
+          <style xsi:type="style:FlatContainerStyleDescription">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+          </style>
+        </containerMappings>
+      </defaultLayer>
+    </ownedRepresentations>
+  </ownedViewpoints>
 </description:Group>
