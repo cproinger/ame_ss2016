@@ -56,32 +56,16 @@
     <ownedRepresentations xsi:type="description_1:DiagramDescription" name="fomcompositionmodelDiagram" domainClass="FOMCompositionModel.ContextManager" enablePopupBars="true">
       <metamodel href="at.ac.tuwien.ame.ss2016.fcm#/"/>
       <metamodel href="at.ac.tuwien.ame.ss2016.man#/"/>
-      <defaultLayer name="Default">
-        <edgeMappings name="transitionEdge2" sourceMapping="//@ownedViewpoints[name='fomcompositionmodel']/@ownedRepresentations[name='fomcompositionmodelDiagram']/@defaultLayer/@containerMappings[name='managerNode']/@subContainerMappings[name='stateNode2']" targetMapping="//@ownedViewpoints[name='fomcompositionmodel']/@ownedRepresentations[name='fomcompositionmodelDiagram']/@defaultLayer/@containerMappings[name='managerNode']/@subContainerMappings[name='stateNode2']" targetFinderExpression="feature:targetState" sourceFinderExpression="feature:eContainer" domainClass="ManagerModel.Transition" useDomainElement="true">
-          <style sizeComputationExpression="2">
-            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
-            <centerLabelStyleDescription showIcon="false" labelExpression="feature:description">
-              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-            </centerLabelStyleDescription>
-          </style>
-        </edgeMappings>
-        <edgeMappings name="remoteFiringEdge" sourceMapping="//@ownedViewpoints[name='fomcompositionmodel']/@ownedRepresentations[name='fomcompositionmodelDiagram']/@defaultLayer/@edgeMappings[name='transitionEdge2']" targetMapping="//@ownedViewpoints[name='fomcompositionmodel']/@ownedRepresentations[name='fomcompositionmodelDiagram']/@defaultLayer/@edgeMappings[name='transitionEdge2']" targetFinderExpression="feature:firedBy" sourceFinderExpression="feature:firing" domainClass="FOMCompositionModel.RemoteFiring" useDomainElement="true">
+      <defaultLayer name="Default" reusedMappings="//@ownedViewpoints[name='managermodel']/@ownedRepresentations[name='managerModelDiagram']/@defaultLayer/@edgeMappings[name='transitionEdge']">
+        <edgeMappings name="remoteFiringEdge" sourceMapping="//@ownedViewpoints[name='managermodel']/@ownedRepresentations[name='managerModelDiagram']/@defaultLayer/@edgeMappings[name='transitionEdge']" targetMapping="//@ownedViewpoints[name='managermodel']/@ownedRepresentations[name='managerModelDiagram']/@defaultLayer/@edgeMappings[name='transitionEdge']" targetFinderExpression="feature:firedBy" sourceFinderExpression="feature:firing" domainClass="FOMCompositionModel.RemoteFiring" useDomainElement="true">
           <style lineStyle="dash" sizeComputationExpression="2">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-            <centerLabelStyleDescription labelExpression="fired by">
+            <centerLabelStyleDescription showIcon="false" labelExpression="fired by">
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             </centerLabelStyleDescription>
           </style>
         </edgeMappings>
-        <containerMappings name="managerNode" semanticCandidatesExpression="feature:eAllContents" domainClass="ManagerModel.Manager">
-          <subContainerMappings name="stateNode2" semanticCandidatesExpression="feature:eAllContents" domainClass="ManagerModel.State">
-            <style xsi:type="style:FlatContainerStyleDescription" showIcon="false">
-              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_yellow']"/>
-              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
-            </style>
-          </subContainerMappings>
+        <containerMappings name="managerNode" semanticCandidatesExpression="feature:eAllContents" domainClass="ManagerModel.Manager" reusedContainerMappings="//@ownedViewpoints[name='managermodel']/@ownedRepresentations[name='managerModelDiagram']/@defaultLayer/@containerMappings[name='stateNode']">
           <style xsi:type="style:FlatContainerStyleDescription" labelSize="12" showIcon="false">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelFormat>bold</labelFormat>
@@ -90,6 +74,49 @@
             <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
           </style>
         </containerMappings>
+        <toolSections name="Edges">
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="CreateTransition" edgeMappings="//@ownedViewpoints[name='managermodel']/@ownedRepresentations[name='managerModelDiagram']/@defaultLayer/@edgeMappings[name='transitionEdge']">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:source">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="ManagerModel.Transition" referenceName="transitions" variableName="transition">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="targetState" valueExpression="var:target"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="['Transition'/]"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="CreateRemoteFiring" edgeMappings="//@ownedViewpoints[name='fomcompositionmodel']/@ownedRepresentations[name='fomcompositionmodelDiagram']/@defaultLayer/@edgeMappings[name='remoteFiringEdge']">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[self.eContainer().eContainer().eContainer()/]">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="FOMCompositionModel.RemoteFiring" referenceName="remotefiring" variableName="remote">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="firing" valueExpression="var:source"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="firedBy" valueExpression="var:target"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+        <toolSections name="Nodes">
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="CreateState" containerMappings="//@ownedViewpoints[name='managermodel']/@ownedRepresentations[name='managerModelDiagram']/@defaultLayer/@containerMappings[name='stateNode']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="ManagerModel.State" referenceName="states">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="['State'/]"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
       </defaultLayer>
     </ownedRepresentations>
   </ownedViewpoints>
