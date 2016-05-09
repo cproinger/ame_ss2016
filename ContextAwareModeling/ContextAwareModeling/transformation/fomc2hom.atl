@@ -1,0 +1,5 @@
+-- @path FOM=/ContextAwareModeling/model/ManagerModel.ecore
+-- @path FOMC=/ContextAwareModeling/model/FOMCompositionModel.ecore
+
+module fomc2hom;
+create OUT: FOM from IN: FOMC;
