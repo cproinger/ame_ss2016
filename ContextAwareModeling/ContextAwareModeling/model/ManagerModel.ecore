@@ -11,11 +11,10 @@
   </eAnnotations>
   <eClassifiers xsi:type="ecore:EClass" name="State" eSuperTypes="#//NamedElement">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-      <details key="constraints" value="AllProbableOrAllRate IfProbableThenSum1"/>
+      <details key="constraints" value="IfProbableThenSum1"/>
     </eAnnotations>
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
-      <details key="AllProbableOrAllRate" value="transitions -> select(t | not t.probability.oclIsUndefined()) -> size() = transitions -> size()&#xA;&#x9;&#x9;&#x9;or transitions -> select(t | not t.probability.oclIsUndefined()) -> size() = 0"/>
-      <details key="IfProbableThenSum1" value="transitions -> select(t | not t.probability.oclIsUndefined()) -> size() = 0&#xA;&#x9;&#x9;&#x9;or transitions.probability -> sum() = 1.0"/>
+      <details key="IfProbableThenSum1" value="transitions -> select(t | not t.probability.oclIsUndefined()) -> size() = 0&#xA;&#x9;&#x9;&#x9;or transitions -> select(t | not t.probability.oclIsUndefined()) -> collect(probability) -> sum() = 1.0"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="transitions" upperBound="-1"
         eType="#//Transition" containment="true"/>
@@ -36,7 +35,7 @@
         eType="#//State"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="rate" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloatObject"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="probability" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDoubleObject"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="guard" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="guard" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="rateOrProb" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" changeable="false"
         transient="true" derived="true">

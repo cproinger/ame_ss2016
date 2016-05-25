@@ -7,7 +7,7 @@
     importOrganizing="true">
   <foreignModel>FOMCompositionModel.ecore</foreignModel>
   <genPackages prefix="FOMCompositionModel" basePackage="fcm" disposableProviderFactory="true"
-      ecorePackage="FOMCompositionModel.ecore#/">
+      fileExtensions="fomc,fomcompositionmodel" ecorePackage="FOMCompositionModel.ecore#/">
     <genClasses ecoreClass="FOMCompositionModel.ecore#//ContextManager">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FOMCompositionModel.ecore#//ContextManager/manager"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FOMCompositionModel.ecore#//ContextManager/remotefiring"/>

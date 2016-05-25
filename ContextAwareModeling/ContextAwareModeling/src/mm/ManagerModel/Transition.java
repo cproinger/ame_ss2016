@@ -157,7 +157,7 @@ public interface Transition extends NamedElement {
 	 * @return the value of the '<em>Description</em>' attribute.
 	 * @see mm.ManagerModel.ManagerModelPackage#getTransition_Description()
 	 * @model required="true" transient="true" changeable="false" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot derivation='\n\t\t\tif(guard <> null) then self.name + \'[\' + self.guard + \']\\n\' + rateOrProb\n\t\t\telse self.name + \'\\n\' + rateOrProb\n\t\t\tendif'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot derivation='\n\t\t\tif(guard <> null) then self.name + \' [\' + self.guard + \']\\n\' + rateOrProb\n\t\t\telse self.name + \'\\n\' + rateOrProb\n\t\t\tendif'"
 	 * @generated
 	 */
 	String getDescription();

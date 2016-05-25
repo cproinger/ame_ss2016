@@ -28,7 +28,7 @@
             id="mm.ManagerModel.presentation.ManagerModelEditorID"
             name="%_UI_ManagerModelEditor_label"
             icon="icons/full/obj16/ManagerModelModelFile.gif"
-            extensions="managermodel"
+            extensions="fom,hom,managermodel"
             class="mm.ManagerModel.presentation.ManagerModelEditor"
             contributorClass="mm.ManagerModel.presentation.ManagerModelActionBarContributor">
       </editor>

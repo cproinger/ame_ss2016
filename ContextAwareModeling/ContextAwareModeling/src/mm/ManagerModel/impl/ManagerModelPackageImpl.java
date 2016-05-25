@@ -396,7 +396,7 @@ public class ManagerModelPackageImpl extends EPackageImpl implements ManagerMode
 		  (stateEClass, 
 		   source, 
 		   new String[] {
-			 "constraints", "AllProbableOrAllRate IfProbableThenSum1"
+			 "constraints", "IfProbableThenSum1"
 		   });	
 		addAnnotation
 		  (transitionEClass, 
@@ -418,8 +418,7 @@ public class ManagerModelPackageImpl extends EPackageImpl implements ManagerMode
 		  (stateEClass, 
 		   source, 
 		   new String[] {
-			 "AllProbableOrAllRate", "transitions -> select(t | not t.probability.oclIsUndefined()) -> size() = transitions -> size()\n\t\t\tor transitions -> select(t | not t.probability.oclIsUndefined()) -> size() = 0",
-			 "IfProbableThenSum1", "transitions -> select(t | not t.probability.oclIsUndefined()) -> size() = 0\n\t\t\tor transitions.probability -> sum() = 1.0"
+			 "IfProbableThenSum1", "transitions -> select(t | not t.probability.oclIsUndefined()) -> size() = 0\n\t\t\tor transitions -> select(t | not t.probability.oclIsUndefined()) -> collect(probability) -> sum() = 1.0"
 		   });	
 		addAnnotation
 		  (transitionEClass, 
@@ -437,7 +436,7 @@ public class ManagerModelPackageImpl extends EPackageImpl implements ManagerMode
 		  (getTransition_Description(), 
 		   source, 
 		   new String[] {
-			 "derivation", "\n\t\t\tif(guard <> null) then self.name + \'[\' + self.guard + \']\\n\' + rateOrProb\n\t\t\telse self.name + \'\\n\' + rateOrProb\n\t\t\tendif"
+			 "derivation", "\n\t\t\tif(guard <> null) then self.name + \' [\' + self.guard + \']\\n\' + rateOrProb\n\t\t\telse self.name + \'\\n\' + rateOrProb\n\t\t\tendif"
 		   });
 	}
 

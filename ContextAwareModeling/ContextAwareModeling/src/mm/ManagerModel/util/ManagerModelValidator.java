@@ -114,39 +114,8 @@ public class ManagerModelValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(state, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(state, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(state, diagnostics, context);
-		if (result || diagnostics != null) result &= validateState_AllProbableOrAllRate(state, diagnostics, context);
 		if (result || diagnostics != null) result &= validateState_IfProbableThenSum1(state, diagnostics, context);
 		return result;
-	}
-
-	/**
-	 * The cached validation expression for the AllProbableOrAllRate constraint of '<em>State</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String STATE__ALL_PROBABLE_OR_ALL_RATE__EEXPRESSION = "transitions -> select(t | not t.probability.oclIsUndefined()) -> size() = transitions -> size()\n" +
-		"\t\t\tor transitions -> select(t | not t.probability.oclIsUndefined()) -> size() = 0";
-
-	/**
-	 * Validates the AllProbableOrAllRate constraint of '<em>State</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateState_AllProbableOrAllRate(State state, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			validate
-				(ManagerModelPackage.Literals.STATE,
-				 state,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
-				 "AllProbableOrAllRate",
-				 STATE__ALL_PROBABLE_OR_ALL_RATE__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DIAGNOSTIC_SOURCE,
-				 0);
 	}
 
 	/**
@@ -156,7 +125,7 @@ public class ManagerModelValidator extends EObjectValidator {
 	 * @generated
 	 */
 	protected static final String STATE__IF_PROBABLE_THEN_SUM1__EEXPRESSION = "transitions -> select(t | not t.probability.oclIsUndefined()) -> size() = 0\n" +
-		"\t\t\tor transitions.probability -> sum() = 1.0";
+		"\t\t\tor transitions -> select(t | not t.probability.oclIsUndefined()) -> collect(probability) -> sum() = 1.0";
 
 	/**
 	 * Validates the IfProbableThenSum1 constraint of '<em>State</em>'.

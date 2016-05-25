@@ -21,5 +21,41 @@
             class="fcm.FOMCompositionModel.FOMCompositionModelPackage"
             genModel="model/FOMCompositionModel.genmodel"/>
    </extension>
+   <extension
+         id="product"
+         point="org.eclipse.core.runtime.products">
+      <product
+            application="org.eclipse.e4.ui.workbench.swt.E4Application"
+            name="ContextAwareModeling.product">
+         <property
+               name="appName"
+               value="ContextAwareModeling.product">
+         </property>
+      </product>
+   </extension>
+   <extension
+         id="product1"
+         point="org.eclipse.core.runtime.products">
+      <product
+            application="org.eclipse.e4.ui.workbench.swt.E4Application"
+            name="ContextAwareModeling.product">
+         <property
+               name="appName"
+               value="ContextAwareModeling.product">
+         </property>
+      </product>
+   </extension>
+   <extension
+         id="product2"
+         point="org.eclipse.core.runtime.products">
+      <product
+            application="org.eclipse.e4.ui.workbench.swt.E4Application"
+            name="ContextAwareModeling.product2">
+         <property
+               name="appName"
+               value="ContextAwareModeling.product2">
+         </property>
+      </product>
+   </extension>
 
 </plugin>

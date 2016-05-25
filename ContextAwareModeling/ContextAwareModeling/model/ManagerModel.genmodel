@@ -6,7 +6,7 @@
     operationReflection="true" importOrganizing="true">
   <foreignModel>ManagerModel.ecore</foreignModel>
   <genPackages prefix="ManagerModel" basePackage="mm" disposableProviderFactory="true"
-      ecorePackage="ManagerModel.ecore#/">
+      fileExtensions="fom,hom,managermodel" ecorePackage="ManagerModel.ecore#/">
     <genClasses ecoreClass="ManagerModel.ecore#//State">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ManagerModel.ecore#//State/transitions"/>
     </genClasses>
@@ -19,6 +19,8 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ManagerModel.ecore#//Transition/rate"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ManagerModel.ecore#//Transition/probability"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ManagerModel.ecore#//Transition/guard"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute ManagerModel.ecore#//Transition/rateOrProb"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute ManagerModel.ecore#//Transition/description"/>
     </genClasses>
     <genClasses image="false" ecoreClass="ManagerModel.ecore#//NamedElement">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ManagerModel.ecore#//NamedElement/name"/>

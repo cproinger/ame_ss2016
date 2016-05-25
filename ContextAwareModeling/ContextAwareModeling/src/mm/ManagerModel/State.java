@@ -17,8 +17,8 @@ import org.eclipse.emf.common.util.EList;
  * </ul>
  *
  * @see mm.ManagerModel.ManagerModelPackage#getState()
- * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='AllProbableOrAllRate IfProbableThenSum1'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot AllProbableOrAllRate='transitions -> select(t | not t.probability.oclIsUndefined()) -> size() = transitions -> size()\n\t\t\tor transitions -> select(t | not t.probability.oclIsUndefined()) -> size() = 0' IfProbableThenSum1='transitions -> select(t | not t.probability.oclIsUndefined()) -> size() = 0\n\t\t\tor transitions.probability -> sum() = 1.0'"
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='IfProbableThenSum1'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot IfProbableThenSum1='transitions -> select(t | not t.probability.oclIsUndefined()) -> size() = 0\n\t\t\tor transitions -> select(t | not t.probability.oclIsUndefined()) -> collect(probability) -> sum() = 1.0'"
  * @generated
  */
 public interface State extends NamedElement {

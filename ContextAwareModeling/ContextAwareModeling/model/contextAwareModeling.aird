@@ -9,6 +9,7 @@
   <semanticResources>../xmi/DoctorLocation.xmi</semanticResources>
   <semanticResources>../xmi/CPUMode.xmi</semanticResources>
   <semanticResources>../xmi/ContextManager.xmi</semanticResources>
+  <semanticResources>../xmi/BattergyCharge.xmi</semanticResources>
   <ownedViews xmi:type="viewpoint:DRepresentationContainer" xmi:id="_WYcgsP5oEeWGw44-Nh5CSQ">
     <ownedRepresentations xmi:type="diagram:DSemanticDiagram" xmi:id="_55gJkAL2Eea7dZJTeMSZjw" name="FOMCompositionModel class diagram">
       <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_55gJkQL2Eea7dZJTeMSZjw" source="DANNOTATION_CUSTOMIZATION_KEY">
