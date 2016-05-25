@@ -51,7 +51,7 @@ public class TransitionImpl extends NamedElementImpl implements Transition {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final Float RATE_EDEFAULT = null;
+	protected static final Double RATE_EDEFAULT = null;
 
 	/**
 	 * The cached value of the '{@link #getRate() <em>Rate</em>}' attribute.
@@ -61,7 +61,7 @@ public class TransitionImpl extends NamedElementImpl implements Transition {
 	 * @generated
 	 * @ordered
 	 */
-	protected Float rate = RATE_EDEFAULT;
+	protected Double rate = RATE_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getProbability() <em>Probability</em>}' attribute.
@@ -185,7 +185,7 @@ public class TransitionImpl extends NamedElementImpl implements Transition {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Float getRate() {
+	public Double getRate() {
 		return rate;
 	}
 
@@ -194,8 +194,8 @@ public class TransitionImpl extends NamedElementImpl implements Transition {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setRate(Float newRate) {
-		Float oldRate = rate;
+	public void setRate(Double newRate) {
+		Double oldRate = rate;
 		rate = newRate;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ManagerModelPackage.TRANSITION__RATE, oldRate, rate));
@@ -298,7 +298,7 @@ public class TransitionImpl extends NamedElementImpl implements Transition {
 				setTargetState((State)newValue);
 				return;
 			case ManagerModelPackage.TRANSITION__RATE:
-				setRate((Float)newValue);
+				setRate((Double)newValue);
 				return;
 			case ManagerModelPackage.TRANSITION__PROBABILITY:
 				setProbability((Double)newValue);

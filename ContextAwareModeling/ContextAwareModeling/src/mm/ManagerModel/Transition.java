@@ -61,12 +61,12 @@ public interface Transition extends NamedElement {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Rate</em>' attribute.
-	 * @see #setRate(Float)
+	 * @see #setRate(Double)
 	 * @see mm.ManagerModel.ManagerModelPackage#getTransition_Rate()
 	 * @model
 	 * @generated
 	 */
-	Float getRate();
+	Double getRate();
 
 	/**
 	 * Sets the value of the '{@link mm.ManagerModel.Transition#getRate <em>Rate</em>}' attribute.
@@ -76,7 +76,7 @@ public interface Transition extends NamedElement {
 	 * @see #getRate()
 	 * @generated
 	 */
-	void setRate(Float value);
+	void setRate(Double value);
 
 	/**
 	 * Returns the value of the '<em><b>Probability</b></em>' attribute.
