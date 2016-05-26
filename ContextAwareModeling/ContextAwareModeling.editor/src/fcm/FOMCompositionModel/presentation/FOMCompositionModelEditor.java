@@ -155,7 +155,9 @@ import org.eclipse.emf.edit.ui.util.EditUIUtil;
 import org.eclipse.emf.edit.ui.view.ExtendedPropertySheetPage;
 
 import fcm.FOMCompositionModel.provider.FOMCompositionModelItemProviderAdapterFactory;
+
 import mm.ManagerModel.provider.ManagerModelItemProviderAdapterFactory;
+
 import org.eclipse.ui.actions.WorkspaceModifyOperation;
 
 

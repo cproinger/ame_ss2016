@@ -3,6 +3,7 @@
 package fcm.FOMCompositionModel.presentation;
 
 import mm.ManagerModel.provider.ManagerModelEditPlugin;
+
 import org.eclipse.emf.common.EMFPlugin;
 
 import org.eclipse.emf.common.ui.EclipseUIPlugin;
