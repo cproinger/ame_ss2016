@@ -100,4 +100,28 @@
          </property>
       </product>
    </extension>
+   <extension
+         point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            adaptable="false"
+            id="contextawaremodeling.editor.objectContribution1"
+            nameFilter="*.hom"
+            objectClass="org.eclipse.core.resources.IFile">
+         <menu
+               id="contextawaremodeling.editor.menu1"
+               label="CreatePRISMCode"
+               path="additions">
+            <groupMarker
+                  name="contextawaremodeling.editor.groupMarker1">
+            </groupMarker>
+         </menu>
+         <action
+               class="contextawaremodeling.editor.CreatePrismCodeAction"
+               enablesFor="1"
+               id="contextawaremodeling.editor.action1"
+               label="create HOM"
+               menubarPath="contextawaremodeling.editor.menu1/contextawaremodeling.editor.groupMarker1">
+         </action>
+      </objectContribution>
+   </extension>
 </plugin>

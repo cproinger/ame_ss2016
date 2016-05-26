@@ -3,8 +3,8 @@
 <plugin>
   <extension point="org.eclipse.sirius.componentization">
     <component class="ContextAwareModeling.design.Activator"
-               id="ContextAwareModeling.design"
-	       name="ContextAwareModeling">
+               id="dontextqwaremodeling.design"
+	       name="dontextqwaremodeling">
     </component>
   </extension>
   <extension
