@@ -620,7 +620,7 @@ public class FOMCompositionModelEditor
 			BasicDiagnostic diagnostic =
 				new BasicDiagnostic
 					(Diagnostic.OK,
-					 "ContextAwareModeling.editor",
+					 "contextawaremodeling.editor",
 					 0,
 					 null,
 					 new Object [] { editingDomain.getResourceSet() });
@@ -985,7 +985,7 @@ public class FOMCompositionModelEditor
 			BasicDiagnostic basicDiagnostic =
 				new BasicDiagnostic
 					(hasErrors ? Diagnostic.ERROR : Diagnostic.WARNING,
-					 "ContextAwareModeling.editor",
+					 "contextawaremodeling.editor",
 					 0,
 					 getString("_UI_CreateModelError_message", resource.getURI()),
 					 new Object [] { exception == null ? (Object)resource : exception });
@@ -996,7 +996,7 @@ public class FOMCompositionModelEditor
 			return
 				new BasicDiagnostic
 					(Diagnostic.ERROR,
-					 "ContextAwareModeling.editor",
+					 "contextawaremodeling.editor",
 					 0,
 					 getString("_UI_CreateModelError_message", resource.getURI()),
 					 new Object[] { exception });

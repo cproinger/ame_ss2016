@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
-Bundle-SymbolicName: ContextAwareModeling;singleton:=true
+Bundle-SymbolicName: contextawaremodeling;singleton:=true
 Bundle-Version: 0.1.0.qualifier
 Bundle-ClassPath: .
 Bundle-Vendor: %providerName
@@ -15,5 +15,6 @@ Export-Package: mm.ManagerModel,
  fcm.FOMCompositionModel.util
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport,
+ contextawaremodeling;visibility:=reexport,
  ContextAwareModeling;visibility:=reexport
 Bundle-ActivationPolicy: lazy

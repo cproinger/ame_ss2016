@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
-Bundle-SymbolicName: ContextAwareModeling.editor;singleton:=true
+Bundle-SymbolicName: contextawaremodeling.editor;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-ClassPath: .
 Bundle-Activator: fcm.FOMCompositionModel.presentation.FOMCompositionModelEditorPlugin$Implementation
@@ -12,7 +12,7 @@ Export-Package: mm.ManagerModel.presentation,
  fcm.FOMCompositionModel.presentation
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.core.resources;visibility:=reexport,
- ContextAwareModeling.edit;visibility:=reexport,
+ contextawaremodeling.edit;visibility:=reexport,
  org.eclipse.emf.ecore.xmi;visibility:=reexport,
  org.eclipse.emf.edit.ui;visibility:=reexport,
  org.eclipse.ui.ide;visibility:=reexport
