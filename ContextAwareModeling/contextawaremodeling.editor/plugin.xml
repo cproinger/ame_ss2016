@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated ManagerModel -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="mm.ManagerModel.presentation.ManagerModelModelWizardID"
+            name="%_UI_ManagerModelModelWizard_label"
+            class="mm.ManagerModel.presentation.ManagerModelModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/ManagerModelModelFile.gif">
+         <description>%_UI_ManagerModelModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated ManagerModel -->
+      <editor
+            id="mm.ManagerModel.presentation.ManagerModelEditorID"
+            name="%_UI_ManagerModelEditor_label"
+            icon="icons/full/obj16/ManagerModelModelFile.gif"
+            extensions="fom,hom,managermodel"
+            class="mm.ManagerModel.presentation.ManagerModelEditor"
+            contributorClass="mm.ManagerModel.presentation.ManagerModelActionBarContributor">
+      </editor>
+   </extension>
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated FOMCompositionModel -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="fcm.FOMCompositionModel.presentation.FOMCompositionModelModelWizardID"
+            name="%_UI_FOMCompositionModelModelWizard_label"
+            class="fcm.FOMCompositionModel.presentation.FOMCompositionModelModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/FOMCompositionModelModelFile.gif">
+         <description>%_UI_FOMCompositionModelModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated FOMCompositionModel -->
+      <editor
+            id="fcm.FOMCompositionModel.presentation.FOMCompositionModelEditorID"
+            name="%_UI_FOMCompositionModelEditor_label"
+            icon="icons/full/obj16/FOMCompositionModelModelFile.gif"
+            extensions="fomc,fomcompositionmodel"
+            class="fcm.FOMCompositionModel.presentation.FOMCompositionModelEditor"
+            contributorClass="fcm.FOMCompositionModel.presentation.FOMCompositionModelActionBarContributor">
+      </editor>
+   </extension>
+   <extension
+         id="cam_prod1"
+         point="org.eclipse.core.runtime.products">
+      <product
+            application="org.eclipse.e4.ui.workbench.swt.E4Application"
+            name="%productName">
+         <property
+               name="windowImages"
+               value="eclipse16.png,eclipse32.png,eclipse48.png">
+         </property>
+         <property
+               name="aboutText"
+               value="%productBlurb">
+         </property>
+         <property
+               name="aboutImage"
+               value="eclipse_lg.png">
+         </property>
+         <property
+               name="startupForegroundColor"
+               value="9c9696">
+         </property>
+         <property
+               name="startupProgressRect"
+               value="2,290,448,10">
+         </property>
+         <property
+               name="startupMessageRect"
+               value="7,265,320,20">
+         </property>
+         <property
+               name="appName"
+               value="%productName">
+         </property>
+         <property
+               name="preferenceCustomization"
+               value="plugin_customization.ini">
+         </property>
+      </product>
+   </extension>
+</plugin>

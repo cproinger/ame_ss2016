@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<plugin>
+  <extension point="org.eclipse.sirius.componentization">
+    <component class="ContextAwareModeling.design.Activator"
+               id="ContextAwareModeling.design"
+	       name="ContextAwareModeling">
+    </component>
+  </extension>
+  <extension
+        id="product"
+        point="org.eclipse.core.runtime.products">
+     <product
+           application="org.eclipse.e4.ui.workbench.swt.E4Application"
+           name="camProduct">
+        <property
+              name="appName"
+              value="camProduct">
+        </property>
+     </product>
+  </extension>
+  <extension
+        id="product1"
+        point="org.eclipse.core.runtime.products">
+     <product
+           application="org.eclipse.e4.ui.workbench.swt.E4Application"
+           name="camProduct">
+        <property
+              name="appName"
+              value="camProduct">
+        </property>
+     </product>
+  </extension>
+</plugin>

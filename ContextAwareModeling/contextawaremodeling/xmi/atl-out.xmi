@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<man:Manager xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:man="at.ac.tuwien.ame.ss2016.man" name="ctxMan-HOM4">
+  <states name="s1s3"/>
+  <states name="s1s4"/>
+  <states name="s2s3"/>
+  <states name="s2s4"/>
+</man:Manager>
