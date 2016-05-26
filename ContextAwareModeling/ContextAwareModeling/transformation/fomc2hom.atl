@@ -10,24 +10,24 @@ create OUT: FOM from IN: FOMC;
 
 helper context FOMC!Manager def: combine(oms : Sequence(FOM!Manager)) : Sequence(Sequence(FOM!State)) =
 	
-	--self.states.forAll(s | s.combine(oms -> collect(om | om.states)))
 	self.states 
 		-> collect(s | s.combine(oms -> collect(om | om.states)))
-		-> flatten()
+		-> iterate(i; res: Sequence(Sequence(FOM!State)) = Sequence{} | res.union(i))
 		;
 
 --helper def: counter : Integer = 0;
---helper def: multistate : Sequence(FOM!State) = Sequence{};
 
 helper context FOM!State def: combine(oms : Sequence(Sequence(FOM!States))) : Sequence(Sequence(FOM!State)) = 
 	if(oms.size() = 1) then
-		if(oms.first().size() = 1) then
-			Sequence{oms.first().append(self)}
-		else
-			oms.first() -> collect(sx | Sequence{self}.append(sx))
-		endif
+		oms.first() -> collect(sx | Sequence{self}.append(sx))
 	else
-		oms.first() -> collect(ss | ss.combine(oms.excludes(oms.first())) -> flatten())
+--		Sequence{}
+		oms.first() 
+			-> collect(ss | 
+				ss.combine(oms.excluding(oms.first()))
+					-> collect(seq | Sequence{self}.union(seq))
+				)
+				-> iterate(i; res: Sequence(Sequence(FOM!State)) = Sequence{} | res.union(i))
 	endif;
 
 
@@ -37,18 +37,17 @@ rule ContextManager2Manager {
 		cm: FOMC!ContextManager
 	to
 		tm : FOM!Manager (
-			name <- cm.name + '-HOM1'
-			--,states <- cm.combine()
+			name <- cm.name + '-HOM4'
+--			,states <- 
 		)
 
 	do {
-		tm.states =  
-			cm.manager
-			-> sortedBy(m | m.states.size())
-			.first()
-			.combine(cm.manager.excluding(cm.manager.first()))
-			-> collect(x | thisModule.FOMCStateCombination2FOMState(x))
-		;
+		tm.states <- cm.manager
+					-> sortedBy(m | m.states.size())
+					.first()
+					.combine(cm.manager.excluding(cm.manager.first()))
+					-> collect(x | thisModule.FOMCStateCombination2FOMState(x));
+			
 
 	}
 }
@@ -62,12 +61,4 @@ lazy rule FOMCStateCombination2FOMState {
 		)
 }
 
-rule FOMCState2FOMState {
-	from
-		fomcs: FOMC!State
-	to
-		foms: FOM!State (
-			name <- fomcs.name
-		)
 
-}

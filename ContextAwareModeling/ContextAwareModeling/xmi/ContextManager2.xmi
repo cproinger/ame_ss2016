@@ -38,6 +38,23 @@
           probability="1.0"/>
     </states>
   </manager>
+  <manager name="m3"
+      start="s5">
+    <states
+        name="s5">
+      <transitions
+          name="t5_6"
+          targetState="s6"
+          rate="1.0"/>
+    </states>
+    <states
+        name="s6">
+      <transitions
+          name="t6_5"
+          targetState="s5"
+          rate="1.0"/>
+    </states>
+  </manager>
   <remotefiring
       firedBy="t1_2"
       firing="t2_1"/>
