@@ -1,6 +1,0 @@
-ok it seems that the BatteryCharge did violate this because it has outgoing
-edges with both. 
-
-invariant
-		AllProbableOrAllRate: transitions -> select(t | not t.probability.oclIsUndefined()) -> size() = transitions -> size()
-			or transitions -> select(t | not t.probability.oclIsUndefined()) -> size() = 0;
