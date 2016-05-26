@@ -13,6 +13,5 @@ Export-Package: mm.ManagerModel.provider,
 Require-Bundle: org.eclipse.core.runtime,
  contextawaremodeling;visibility:=reexport,
  org.eclipse.emf.edit;visibility:=reexport,
- contextawaremodeling.edit;visibility:=reexport,
- ContextAwareModeling.edit;visibility:=reexport
+ contextawaremodeling.edit;visibility:=reexport
 Bundle-ActivationPolicy: lazy
