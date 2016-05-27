@@ -119,8 +119,28 @@
                class="contextawaremodeling.editor.CreatePrismCodeAction"
                enablesFor="1"
                id="contextawaremodeling.editor.action1"
-               label="create HOM"
+               label="create"
                menubarPath="contextawaremodeling.editor.menu1/contextawaremodeling.editor.groupMarker1">
+         </action>
+      </objectContribution>
+      <objectContribution
+            id="contextawaremodeling.editor.objectContribution2"
+            nameFilter="*.fomc"
+            objectClass="org.eclipse.core.resources.IFile">
+         <menu
+               id="contextawaremodeling.editor.menu2"
+               label="CreateHom"
+               path="additions">
+            <groupMarker
+                  name="contextawaremodeling.editor.groupMarker2">
+            </groupMarker>
+         </menu>
+         <action
+               class="contextawaremodeling.editor.CreateHOMAction"
+               enablesFor="1"
+               id="contextawaremodeling.editor.action1"
+               label="create"
+               menubarPath="contextawaremodeling.editor.menu2/contextawaremodeling.editor.groupMarker2">
          </action>
       </objectContribution>
    </extension>
