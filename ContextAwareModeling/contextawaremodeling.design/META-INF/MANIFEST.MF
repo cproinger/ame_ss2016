@@ -3,7 +3,7 @@ Bundle-ManifestVersion: 2
 Bundle-Name: contextawaremodeling.design
 Bundle-SymbolicName: contextawaremodeling.design;singleton:=true
 Bundle-Version: 1.0.0
-Bundle-Activator: ContextAwareModeling.design.Activator
+Bundle-Activator: ContextAwareModeling2.design.Activator
 Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,
  org.eclipse.core.resources,
