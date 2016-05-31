@@ -19,6 +19,14 @@
             <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_yellow']"/>
             <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
           </style>
+          <conditionnalStyles predicateExpression="[self.eContainer().oclAsType(Manager).start = self/]">
+            <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="6" showIcon="false" roundedCorner="true">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_yellow']"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </conditionnalStyles>
         </containerMappings>
         <toolSections name="Nodes">
           <ownedTools xsi:type="tool:ContainerCreationDescription" name="CreateState" containerMappings="//@ownedViewpoints[name='managermodel']/@ownedRepresentations[name='managerModelDiagram']/@defaultLayer/@containerMappings[name='stateNode']">
