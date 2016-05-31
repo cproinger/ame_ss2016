@@ -166,7 +166,6 @@ public class FOMC2HOM extends AbstractFileGenerator {
 		private void filterFrom(List<State> toRemove, State start) {
 			toRemove.remove(start);
 			for(Transition t : start.getTransitions()) {
-				System.out.println(t.getName() + " from state: " + start.getName());
 				State targetState = t.getTargetState();
 				if(toRemove.contains(targetState)) {
 					filterFrom(toRemove, targetState);
