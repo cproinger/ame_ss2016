@@ -1,4 +1,4 @@
-package ContextAwareModeling2.design;
+package contextawaremodeling.design;
 
 import java.util.HashSet;
 import java.util.Set;

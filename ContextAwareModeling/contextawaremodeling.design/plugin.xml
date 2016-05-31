@@ -2,7 +2,7 @@
 <?eclipse version="3.0"?>
 <plugin>
   <extension point="org.eclipse.sirius.componentization">
-    <component class="ContextAwareModeling2.design.Activator"
+    <component class="contextawaremodeling.design.Activator"
                id="contextawaremodeling.design"
 	       name="contextawaremodeling">
     </component>
