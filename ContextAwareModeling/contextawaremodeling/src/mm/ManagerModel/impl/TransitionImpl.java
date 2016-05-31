@@ -313,13 +313,15 @@ public class TransitionImpl extends NamedElementImpl implements Transition {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated not
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case ManagerModelPackage.TRANSITION__TARGET_STATE:
 				setTargetState((State)null);
+				//remove from parent. 
+				((State)eContainer).getTransitions().remove(this);
 				return;
 			case ManagerModelPackage.TRANSITION__RATE:
 				setRate(RATE_EDEFAULT);
