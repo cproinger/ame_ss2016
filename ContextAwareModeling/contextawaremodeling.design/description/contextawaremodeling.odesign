@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/diagram/description/tool/1.1.0" xmlns:tool_1="http://www.eclipse.org/sirius/description/tool/1.1.0" name="contextawaremodeling" version="10.0.0.201505222000">
+<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:description_2="http://www.eclipse.org/sirius/table/description/1.1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/diagram/description/tool/1.1.0" xmlns:tool_1="http://www.eclipse.org/sirius/description/tool/1.1.0" name="contextawaremodeling" version="10.1.3.201511131800">
   <ownedViewpoints name="managermodel" modelFileExtension="managermodel fom hom">
     <ownedRepresentations xsi:type="description_1:DiagramDescription" name="managerModelDiagram" domainClass="ManagerModel.Manager" enablePopupBars="true">
       <metamodel href="at.ac.tuwien.ame.ss2016.man#/"/>
@@ -13,7 +13,7 @@
           </style>
         </edgeMappings>
         <containerMappings name="stateNode" semanticCandidatesExpression="feature:eAllContents" domainClass="ManagerModel.State">
-          <style xsi:type="style:FlatContainerStyleDescription" showIcon="false" roundedCorner="true">
+          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" showIcon="false" roundedCorner="true">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_yellow']"/>
@@ -59,6 +59,11 @@
         </toolSections>
       </defaultLayer>
     </ownedRepresentations>
+    <ownedRepresentations xsi:type="description_2:CrossTableDescription" name="managerModelCrossTable" domainClass="ManagerModel.Manager">
+      <ownedLineMappings name="sourceState" domainClass="ManagerModel.State"/>
+      <ownedColumnMappings name="targetState" domainClass="ManagerModel.State"/>
+      <intersection name="intersec" lineMapping="//@ownedViewpoints[name='managermodel']/@ownedRepresentations[name='managerModelCrossTable']/@ownedLineMappings[name='sourceState']" columnMapping="//@ownedViewpoints[name='managermodel']/@ownedRepresentations[name='managerModelCrossTable']/@ownedColumnMappings.0" labelExpression="[self.rate/]" useDomainClass="true" columnFinderExpression="[self.targetState/]" lineFinderExpression="[self.eContainer()/]" semanticCandidatesExpression="[self.states ->  collect(s | s.transitions) -> flatten()/]" domainClass="ManagerModel.Transition"/>
+    </ownedRepresentations>
   </ownedViewpoints>
   <ownedViewpoints name="fomcompositionmodel" modelFileExtension="fomcompositionmodel fomc">
     <ownedRepresentations xsi:type="description_1:DiagramDescription" name="fomcompositionmodelDiagram" domainClass="FOMCompositionModel.ContextManager" enablePopupBars="true">
@@ -74,7 +79,7 @@
           </style>
         </edgeMappings>
         <containerMappings name="managerNode" semanticCandidatesExpression="feature:eAllContents" domainClass="ManagerModel.Manager" reusedContainerMappings="//@ownedViewpoints[name='managermodel']/@ownedRepresentations[name='managerModelDiagram']/@defaultLayer/@containerMappings[name='stateNode']">
-          <style xsi:type="style:FlatContainerStyleDescription" labelSize="12" showIcon="false">
+          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="12" showIcon="false">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelFormat>bold</labelFormat>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>

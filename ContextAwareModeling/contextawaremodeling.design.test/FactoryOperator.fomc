@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fcm:ContextManager xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:fcm="at.ac.tuwien.ame.ss2016.fcm" name="FactoryOperatorCtxMan">
+  <manager name="MachineAOperationModes" start="Producing">
+    <states name="Producing">
+      <transitions name="change_to_maintenance" targetState="Self-Maintenance" rate="0.12"/>
+    </states>
+    <states name="Self-Maintenance">
+      <transitions name="change_to_producting" targetState="Producing" rate="6.0"/>
+    </states>
+  </manager>
+  <manager name="OperatorWorkSchedule" start="FreeTime">
+    <states name="FreeTime">
+      <transitions name="go_to_work" targetState="WorkTime" rate="0.0625"/>
+    </states>
+    <states name="WorkTime">
+      <transitions name="go_home" targetState="FreeTime" rate="0.125"/>
+    </states>
+  </manager>
+  <manager name="OperatorLocation" start="Off-Factory-Facilities">
+    <states name="Off-Factory-Facilities">
+      <transitions name="start_work_at_a" targetState="Factory-Room-A" probability="0.3333"/>
+      <transitions name="start_work_at_b" targetState="Factory-Room-B" probability="0.3333"/>
+      <transitions name="start_work_at_c" targetState="Factory-Room-C" probability="0.3334"/>
+    </states>
+    <states name="Factory-Room-A">
+      <transitions name="a2b" targetState="Factory-Room-B" rate="1.0"/>
+      <transitions name="leave_factory_from_a" targetState="Off-Factory-Facilities" probability="1.0"/>
+    </states>
+    <states name="Factory-Room-B">
+      <transitions name="b2c" targetState="Factory-Room-C" rate="1.0"/>
+      <transitions name="leave_factory_from_b" targetState="Off-Factory-Facilities" probability="1.0"/>
+    </states>
+    <states name="Factory-Room-C">
+      <transitions name="c2a" targetState="Factory-Room-A" rate="1.0"/>
+      <transitions name="leave_factory_from_c" targetState="Off-Factory-Facilities" probability="1.0"/>
+    </states>
+  </manager>
+  <remotefiring firedBy="go_home" firing="leave_factory_from_a"/>
+  <remotefiring firedBy="go_home" firing="leave_factory_from_b"/>
+  <remotefiring firedBy="go_home" firing="leave_factory_from_c"/>
+  <remotefiring firedBy="go_to_work" firing="start_work_at_a"/>
+  <remotefiring firedBy="go_to_work" firing="start_work_at_b"/>
+  <remotefiring firedBy="go_to_work" firing="start_work_at_c"/>
+</fcm:ContextManager>

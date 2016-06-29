@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="ASCII"?>
+<man:Manager xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:man="at.ac.tuwien.ame.ss2016.man" start="Off-Factory-Facilities_FreeTime_Producing">
+  <states name="Off-Factory-Facilities_FreeTime_Producing">
+    <transitions name="OFP_2_AWP" targetState="Factory-Room-A_WorkTime_Producing" rate="0.0023125"/>
+    <transitions name="OFP_2_BWP" targetState="Factory-Room-B_WorkTime_Producing" rate="0.0023125"/>
+    <transitions name="OFP_2_CWP" targetState="Factory-Room-C_WorkTime_Producing" rate="0.0023125"/>
+    <transitions name="OFP_2_OFS" targetState="Off-Factory-Facilities_FreeTime_Self-Maintenance" rate="0.12"/>
+  </states>
+  <states name="Factory-Room-A_WorkTime_Producing">
+    <transitions name="AWP_2_BWP" targetState="Factory-Room-B_WorkTime_Producing" rate="1.0"/>
+    <transitions name="AWP_2_OFP" targetState="Off-Factory-Facilities_FreeTime_Producing" rate="0.125"/>
+    <transitions name="AWP_2_AWS" targetState="Factory-Room-A_WorkTime_Self-Maintenance" rate="0.12"/>
+  </states>
+  <states name="Factory-Room-B_WorkTime_Producing">
+    <transitions name="BWP_2_CWP" targetState="Factory-Room-C_WorkTime_Producing" rate="1.0"/>
+    <transitions name="BWP_2_OFP" targetState="Off-Factory-Facilities_FreeTime_Producing" rate="0.125"/>
+    <transitions name="BWP_2_BWS" targetState="Factory-Room-B_WorkTime_Self-Maintenance" rate="0.12"/>
+  </states>
+  <states name="Factory-Room-C_WorkTime_Producing">
+    <transitions name="CWP_2_AWP" targetState="Factory-Room-A_WorkTime_Producing" rate="1.0"/>
+    <transitions name="CWP_2_OFP" targetState="Off-Factory-Facilities_FreeTime_Producing" rate="0.125"/>
+    <transitions name="CWP_2_CWS" targetState="Factory-Room-C_WorkTime_Self-Maintenance" rate="0.12"/>
+  </states>
+  <states name="Off-Factory-Facilities_FreeTime_Self-Maintenance">
+    <transitions name="OFS_2_AWS" targetState="Factory-Room-A_WorkTime_Self-Maintenance" rate="0.0023125"/>
+    <transitions name="OFS_2_BWS" targetState="Factory-Room-B_WorkTime_Self-Maintenance" rate="0.0023125"/>
+    <transitions name="OFS_2_CWS" targetState="Factory-Room-C_WorkTime_Self-Maintenance" rate="0.0023125"/>
+    <transitions name="OFS_2_OFP" targetState="Off-Factory-Facilities_FreeTime_Producing" rate="6.0"/>
+  </states>
+  <states name="Factory-Room-A_WorkTime_Self-Maintenance">
+    <transitions name="AWS_2_BWS" targetState="Factory-Room-B_WorkTime_Self-Maintenance" rate="1.0"/>
+    <transitions name="AWS_2_OFS" targetState="Off-Factory-Facilities_FreeTime_Self-Maintenance" rate="0.125"/>
+    <transitions name="AWS_2_AWP" targetState="Factory-Room-A_WorkTime_Producing" rate="6.0"/>
+  </states>
+  <states name="Factory-Room-B_WorkTime_Self-Maintenance">
+    <transitions name="BWS_2_CWS" targetState="Factory-Room-C_WorkTime_Self-Maintenance" rate="1.0"/>
+    <transitions name="BWS_2_OFS" targetState="Off-Factory-Facilities_FreeTime_Self-Maintenance" rate="0.125"/>
+    <transitions name="BWS_2_BWP" targetState="Factory-Room-B_WorkTime_Producing" rate="6.0"/>
+  </states>
+  <states name="Factory-Room-C_WorkTime_Self-Maintenance">
+    <transitions name="CWS_2_AWS" targetState="Factory-Room-A_WorkTime_Self-Maintenance" rate="1.0"/>
+    <transitions name="CWS_2_OFS" targetState="Off-Factory-Facilities_FreeTime_Self-Maintenance" rate="0.125"/>
+    <transitions name="CWS_2_CWP" targetState="Factory-Room-C_WorkTime_Producing" rate="6.0"/>
+  </states>
+</man:Manager>

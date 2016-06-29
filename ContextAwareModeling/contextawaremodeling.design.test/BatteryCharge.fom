@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<man:Manager xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:man="at.ac.tuwien.ame.ss2016.man" name="BatteryCharge First Order Manager" start="HighPower">
+  <states name="HighPower">
+    <transitions name="discharging" targetState="LowPower" rate="0.18"/>
+  </states>
+  <states name="LowPower">
+    <transitions name="plugging" targetState="UnderCharge" rate="0.53"/>
+  </states>
+  <states name="UnderCharge">
+    <transitions name="unplugging" targetState="HighPower" rate="0.5"/>
+    <transitions name="anticipated_unplugging" targetState="LowPower" probability="1.0"/>
+  </states>
+</man:Manager>

@@ -1,0 +1,35 @@
+ctmc
+
+module hom
+	hs : [0..7] init 0;
+//0=Off-Factory-Facilities_FreeTime_Producing
+//1=Factory-Room-A_WorkTime_Producing
+//2=Factory-Room-B_WorkTime_Producing
+//3=Factory-Room-C_WorkTime_Producing
+//4=Off-Factory-Facilities_FreeTime_Self-Maintenance
+//5=Factory-Room-A_WorkTime_Self-Maintenance
+//6=Factory-Room-B_WorkTime_Self-Maintenance
+//7=Factory-Room-C_WorkTime_Self-Maintenance
+	[t_OffFactoryFacilities_FreeTime_Producing_2_FactoryRoomA_WorkTime_Producing] hs=0 -> 0.083333333 : (hs'=1);
+	[t_OffFactoryFacilities_FreeTime_Producing_2_OffFactoryFacilities_FreeTime_SelfMaintenance] hs=0 -> 0.12 : (hs'=4);
+	[t_FactoryRoomA_WorkTime_Producing_2_FactoryRoomB_WorkTime_Producing] hs=1 -> 1 : (hs'=2);
+	[t_FactoryRoomA_WorkTime_Producing_2_OffFactoryFacilities_FreeTime_Producing] hs=1 -> 0.083333333 : (hs'=0);
+	[t_FactoryRoomA_WorkTime_Producing_2_FactoryRoomA_WorkTime_SelfMaintenance] hs=1 -> 0.12 : (hs'=5);
+	[t_FactoryRoomB_WorkTime_Producing_2_FactoryRoomC_WorkTime_Producing] hs=2 -> 1 : (hs'=3);
+	[t_FactoryRoomB_WorkTime_Producing_2_OffFactoryFacilities_FreeTime_Producing] hs=2 -> 0.083333333 : (hs'=0);
+	[t_FactoryRoomB_WorkTime_Producing_2_FactoryRoomB_WorkTime_SelfMaintenance] hs=2 -> 0.12 : (hs'=6);
+	[t_FactoryRoomC_WorkTime_Producing_2_FactoryRoomA_WorkTime_Producing] hs=3 -> 1 : (hs'=1);
+	[t_FactoryRoomC_WorkTime_Producing_2_OffFactoryFacilities_FreeTime_Producing] hs=3 -> 0.083333333 : (hs'=0);
+	[t_FactoryRoomC_WorkTime_Producing_2_FactoryRoomC_WorkTime_SelfMaintenance] hs=3 -> 0.12 : (hs'=7);
+	[t_OffFactoryFacilities_FreeTime_SelfMaintenance_2_FactoryRoomA_WorkTime_SelfMaintenance] hs=4 -> 0.083333333 : (hs'=5);
+	[t_OffFactoryFacilities_FreeTime_SelfMaintenance_2_OffFactoryFacilities_FreeTime_Producing] hs=4 -> 6 : (hs'=0);
+	[t_FactoryRoomA_WorkTime_SelfMaintenance_2_FactoryRoomB_WorkTime_SelfMaintenance] hs=5 -> 1 : (hs'=6);
+	[t_FactoryRoomA_WorkTime_SelfMaintenance_2_OffFactoryFacilities_FreeTime_SelfMaintenance] hs=5 -> 0.083333333 : (hs'=4);
+	[t_FactoryRoomA_WorkTime_SelfMaintenance_2_FactoryRoomA_WorkTime_Producing] hs=5 -> 6 : (hs'=1);
+	[t_FactoryRoomB_WorkTime_SelfMaintenance_2_FactoryRoomC_WorkTime_SelfMaintenance] hs=6 -> 1 : (hs'=7);
+	[t_FactoryRoomB_WorkTime_SelfMaintenance_2_OffFactoryFacilities_FreeTime_SelfMaintenance] hs=6 -> 0.083333333 : (hs'=4);
+	[t_FactoryRoomB_WorkTime_SelfMaintenance_2_FactoryRoomB_WorkTime_Producing] hs=6 -> 6 : (hs'=2);
+	[t_FactoryRoomC_WorkTime_SelfMaintenance_2_FactoryRoomA_WorkTime_SelfMaintenance] hs=7 -> 1 : (hs'=5);
+	[t_FactoryRoomC_WorkTime_SelfMaintenance_2_OffFactoryFacilities_FreeTime_SelfMaintenance] hs=7 -> 0.083333333 : (hs'=4);
+	[t_FactoryRoomC_WorkTime_SelfMaintenance_2_FactoryRoomC_WorkTime_Producing] hs=7 -> 6 : (hs'=3);
+endmodule

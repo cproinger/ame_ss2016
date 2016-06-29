@@ -64,7 +64,7 @@ public class Hom2Prism extends AbstractFileGenerator {
 	}
 
 	private String toPrismName(State s) {
-		return s.getName();
+		return s.getName().replace("-", "");
 	}
 
 

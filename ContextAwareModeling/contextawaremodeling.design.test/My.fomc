@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fcm:ContextManager xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:fcm="at.ac.tuwien.ame.ss2016.fcm" name="ctx">
+  <manager name="Doctors Location First-Order-Manager" start="Home">
+    <states name="Home">
+      <transitions name="leaving_home" targetState="OpenAir_hs" rate="0.1"/>
+    </states>
+    <states name="OpenAir_hs">
+      <transitions name="going_to_work" targetState="Surgery" rate="2.0"/>
+    </states>
+    <states name="Surgery">
+      <transitions name="leaving_surgery_to_assist_patients" targetState="OpenAir_sp" rate="0.25" guard=""/>
+      <transitions name="leaving_surgery_to_go_home" targetState="OpenAir_sh" rate="0.13"/>
+    </states>
+    <states name="OpenAir_sp">
+      <transitions name="going_to_patients" targetState="PatientHome" rate="3.0"/>
+    </states>
+    <states name="PatientHome">
+      <transitions name="leaving_patients_home" targetState="OpenAir_ps" rate="12.0"/>
+    </states>
+    <states name="OpenAir_ps">
+      <transitions name="going_back_to_work" targetState="Surgery" rate="3.0"/>
+    </states>
+    <states name="OpenAir_sh">
+      <transitions name="going_back_home" targetState="Home" rate="1.0"/>
+    </states>
+  </manager>
+  <manager name="BatteryCharge First Order Manager" start="HighPower">
+    <states name="HighPower">
+      <transitions name="discharging" targetState="LowPower" rate="0.18"/>
+    </states>
+    <states name="LowPower">
+      <transitions name="plugging" targetState="UnderCharge" rate="0.53"/>
+    </states>
+    <states name="UnderCharge">
+      <transitions name="unplugging" targetState="HighPower" rate="0.5"/>
+      <transitions name="anticipated_unplugging" targetState="LowPower" probability="1.0"/>
+    </states>
+  </manager>
+  <manager name="CPU Mode First Order Manager" start="Normal">
+    <states name="Normal">
+      <transitions name="switching_to_PSM" targetState="PowerSave" probability="1.0" guard="test"/>
+    </states>
+    <states name="PowerSave">
+      <transitions name="switching_to_NM" targetState="Normal" probability="1.0"/>
+    </states>
+  </manager>
+  <remotefiring firedBy="discharging" firing="switching_to_PSM"/>
+  <remotefiring firedBy="unplugging" firing="switching_to_NM"/>
+  <remotefiring firedBy="leaving_home" firing="anticipated_unplugging"/>
+  <remotefiring firedBy="leaving_surgery_to_assist_patients" firing="anticipated_unplugging"/>
+</fcm:ContextManager>

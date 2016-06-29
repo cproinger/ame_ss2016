@@ -1,0 +1,49 @@
+ctmc
+
+module hom
+	hs : [0..15] init 0;
+//0=01_H_HP_NM
+//1=02_H_LP_PSM
+//2=04a_OAhs_HP_NM
+//3=04b_OAsh_HP_NM
+//4=05a_OA_LP_PSM
+//5=06_S_HP_NM
+//6=04c_OAsp_HP_NM
+//7=09_P_HP_NM
+//8=04d_OAps_HP_NM
+//9=10_LP_PSM
+//10=05c_OAsp_LP_PSM
+//11=03_H_UC_PSM
+//12=07_S_LP_PSM
+//13=05d_OAps_LP_PSM
+//14=08_S_UC_PSM
+//15=05b_OAsh_LP_PSM
+	[t_01_H_HP_NM_2_04a_OAhs_HP_NM] hs=0 -> 0.1 : (hs'=2);
+	[t_01_H_HP_NM_2_02_H_LP_PSM] hs=0 -> 0.177 : (hs'=1);
+	[t_02_H_LP_PSM_2_03_H_UC_PSM] hs=1 -> 0.533 : (hs'=11);
+	[t_02_H_LP_PSM_2_05a_OA_LP_PSM] hs=1 -> 0.1 : (hs'=4);
+	[t_04a_OAhs_HP_NM_2_05a_OA_LP_PSM] hs=2 -> 0.177 : (hs'=4);
+	[t_04a_OAhs_HP_NM_2_06_S_HP_NM] hs=2 -> 2 : (hs'=5);
+	[t_04b_OAsh_HP_NM_2_01_H_HP_NM] hs=3 -> 0.5 : (hs'=0);
+	[t_05a_OA_LP_PSM_2_07_S_LP_PSM] hs=4 -> 2 : (hs'=12);
+	[t_06_S_HP_NM_2_04c_OAsp_HP_NM] hs=5 -> 0.25 : (hs'=6);
+	[t_06_S_HP_NM_2_04b_OAsh_HP_NM] hs=5 -> 0.125 : (hs'=3);
+	[t_06_S_HP_NM_2_07_S_LP_PSM] hs=5 -> 0.177 : (hs'=12);
+	[t_04c_OAsp_HP_NM_2_09_P_HP_NM] hs=6 -> 3 : (hs'=7);
+	[t_04c_OAsp_HP_NM_2_05c_OAsp_LP_PSM] hs=6 -> 0.177 : (hs'=10);
+	[t_09_P_HP_NM_2_04d_OAps_HP_NM] hs=7 -> 12 : (hs'=8);
+	[t_09_P_HP_NM_2_10_LP_PSM] hs=7 -> 0.177 : (hs'=9);
+	[t_04d_OAps_HP_NM_2_05d_OAps_LP_PSM] hs=8 -> 0.177 : (hs'=13);
+	[t_10_LP_PSM_2_05d_OAps_LP_PSM] hs=9 -> 12 : (hs'=13);
+	[t_05c_OAsp_LP_PSM_2_10_LP_PSM] hs=10 -> 3 : (hs'=9);
+	[t_03_H_UC_PSM_2_01_H_HP_NM] hs=11 -> 0.5 : (hs'=0);
+	[t_03_H_UC_PSM_2_05a_OA_LP_PSM] hs=11 -> 0.1 : (hs'=4);
+	[t_07_S_LP_PSM_2_05c_OAsp_LP_PSM] hs=12 -> 0.25 : (hs'=10);
+	[t_07_S_LP_PSM_2_05b_OAsh_LP_PSM] hs=12 -> 0.125 : (hs'=15);
+	[t_07_S_LP_PSM_2_08_S_UC_PSM] hs=12 -> 0.177 : (hs'=14);
+	[t_05d_OAps_LP_PSM_2_07_S_LP_PSM] hs=13 -> 3 : (hs'=12);
+	[t_08_S_UC_PSM_2_05c_OAsp_LP_PSM] hs=14 -> 0.25 : (hs'=10);
+	[t_08_S_UC_PSM_2_05b_OAsh_LP_PSM] hs=14 -> 0.125 : (hs'=15);
+	[t_08_S_UC_PSM_2_06_S_HP_NM] hs=14 -> 0.5 : (hs'=5);
+	[t_05b_OAsh_LP_PSM_2_02_H_LP_PSM] hs=15 -> 0.5 : (hs'=1);
+endmodule

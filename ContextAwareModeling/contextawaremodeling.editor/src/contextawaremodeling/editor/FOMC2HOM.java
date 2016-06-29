@@ -149,10 +149,10 @@ public class FOMC2HOM extends AbstractFileGenerator {
 			scs.stream().forEach(sc -> sc.createTransitions(scs));
 			
 			//now filter for only those states that are reachable from the start. 
-			StateComposition start = scs.stream().filter(sc -> sc.isStart()).findFirst().get();
+			StateComposition start = findConsistingOfOnlyStartStates(scs);
 			
 			ArrayList<State> toRemove = new ArrayList<State>(cartesianProductStates);
-			filterFrom(toRemove, start.compState);
+			recursivelyRemoveReachableStates(toRemove, start.compState);
 //			
 			cartesianProductStates.removeAll(toRemove);
 			
@@ -163,12 +163,16 @@ public class FOMC2HOM extends AbstractFileGenerator {
 			return m;
 		}
 
-		private void filterFrom(List<State> toRemove, State start) {
+		private StateComposition findConsistingOfOnlyStartStates(List<StateComposition> scs) {
+			return scs.stream().filter(sc -> sc.isStart()).findFirst().get();
+		}
+
+		private void recursivelyRemoveReachableStates(List<State> toRemove, State start) {
 			toRemove.remove(start);
 			for(Transition t : start.getTransitions()) {
 				State targetState = t.getTargetState();
 				if(toRemove.contains(targetState)) {
-					filterFrom(toRemove, targetState);
+					recursivelyRemoveReachableStates(toRemove, targetState);
 				}
 			}
 		}

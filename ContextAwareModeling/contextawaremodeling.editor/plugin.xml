@@ -129,7 +129,7 @@
             objectClass="org.eclipse.core.resources.IFile">
          <menu
                id="contextawaremodeling.editor.menu2"
-               label="CreateHom"
+               label="HOM"
                path="additions">
             <groupMarker
                   name="contextawaremodeling.editor.groupMarker2">
@@ -139,7 +139,7 @@
                class="contextawaremodeling.editor.CreateHOMAction"
                enablesFor="1"
                id="contextawaremodeling.editor.action1"
-               label="create"
+               label="create HOM"
                menubarPath="contextawaremodeling.editor.menu2/contextawaremodeling.editor.groupMarker2">
          </action>
       </objectContribution>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<man:Manager xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:man="at.ac.tuwien.ame.ss2016.man" name="HOM" start="01_H_HP_NM">
+  <states name="01_H_HP_NM">
+    <transitions name="01_2_04a" targetState="04a_OAhs_HP_NM" rate="0.1"/>
+    <transitions name="01_2_02" targetState="02_H_LP_PSM" rate="0.177"/>
+  </states>
+  <states name="02_H_LP_PSM">
+    <transitions name="02_2_03" targetState="03_H_UC_PSM" rate="0.533"/>
+    <transitions name="02_2_05a" targetState="05a_OA_LP_PSM" rate="0.1"/>
+  </states>
+  <states name="04a_OAhs_HP_NM">
+    <transitions name=" " targetState="05a_OA_LP_PSM" rate="0.177"/>
+    <transitions name="04a_2_06" targetState="06_S_HP_NM" rate="2.0"/>
+  </states>
+  <states name="04b_OAsh_HP_NM">
+    <transitions name="01_2_04b" targetState="01_H_HP_NM" rate="0.5"/>
+  </states>
+  <states name="05a_OA_LP_PSM">
+    <transitions name="05a_2_07" targetState="07_S_LP_PSM" rate="2.0"/>
+  </states>
+  <states name="06_S_HP_NM">
+    <transitions name="06_04c" targetState="04c_OAsp_HP_NM" rate="0.25"/>
+    <transitions name="06_2_04b" targetState="04b_OAsh_HP_NM" rate="0.125"/>
+    <transitions name="06_2_07" targetState="07_S_LP_PSM" rate="0.177"/>
+  </states>
+  <states name="04c_OAsp_HP_NM">
+    <transitions name="04c_2_09" targetState="09_P_HP_NM" rate="3.0"/>
+    <transitions name="04c_2_05c" targetState="05c_OAsp_LP_PSM" rate="0.177"/>
+  </states>
+  <states name="09_P_HP_NM">
+    <transitions name="09_2_04d" targetState="04d_OAps_HP_NM" rate="12.0"/>
+    <transitions name="09_2_10" targetState="10_LP_PSM" rate="0.177"/>
+  </states>
+  <states name="04d_OAps_HP_NM">
+    <transitions name="05d_2_05d" targetState="05d_OAps_LP_PSM" rate="0.177"/>
+  </states>
+  <states name="10_LP_PSM">
+    <transitions name="10_2_05d" targetState="05d_OAps_LP_PSM" rate="12.0"/>
+  </states>
+  <states name="05c_OAsp_LP_PSM">
+    <transitions name="05c_2_10" targetState="10_LP_PSM" rate="3.0"/>
+  </states>
+  <states name="03_H_UC_PSM">
+    <transitions name="03_2_01" targetState="01_H_HP_NM" rate="0.5"/>
+    <transitions name="03_2_05a" targetState="05a_OA_LP_PSM" rate="0.1"/>
+  </states>
+  <states name="07_S_LP_PSM">
+    <transitions name="07_2_05c" targetState="05c_OAsp_LP_PSM" rate="0.25"/>
+    <transitions name="07_2_05b" targetState="05b_OAsh_LP_PSM" rate="0.125"/>
+    <transitions name="07_2_08" targetState="08_S_UC_PSM" rate="0.177"/>
+  </states>
+  <states name="05d_OAps_LP_PSM">
+    <transitions name="05d_2_07" targetState="07_S_LP_PSM" rate="3.0"/>
+  </states>
+  <states name="08_S_UC_PSM">
+    <transitions name="08_2_05c" targetState="05c_OAsp_LP_PSM" rate="0.25"/>
+    <transitions name="08_2_05b" targetState="05b_OAsh_LP_PSM" rate="0.125"/>
+    <transitions name="08_2_06" targetState="06_S_HP_NM" rate="0.5"/>
+  </states>
+  <states name="05b_OAsh_LP_PSM">
+    <transitions name="05b_2_02" targetState="02_H_LP_PSM" rate="0.5"/>
+  </states>
+</man:Manager>

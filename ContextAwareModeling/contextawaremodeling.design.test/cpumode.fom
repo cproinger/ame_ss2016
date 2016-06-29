@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<man:Manager xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:man="at.ac.tuwien.ame.ss2016.man" name="CPU Mode First Order Manager" start="Normal">
+  <states name="Normal">
+    <transitions name="switching_to_PSM" targetState="PowerSave" probability="1.0" guard="test"/>
+  </states>
+  <states name="PowerSave">
+    <transitions name="switching_to_NM" targetState="Normal" probability="1.0"/>
+  </states>
+</man:Manager>

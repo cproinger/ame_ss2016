@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="ASCII"?>
+<man:Manager xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:man="at.ac.tuwien.ame.ss2016.man" name="hom" start="Normal_HighPower_Home">
+  <states name="Normal_HighPower_Home">
+    <transitions name="Normal_HighPower_Home_2_PowerSave_LowPower_Home" targetState="PowerSave_LowPower_Home" rate="0.18"/>
+    <transitions name="Normal_HighPower_Home_2_Normal_HighPower_OpenAir_hs" targetState="Normal_HighPower_OpenAir_hs" rate="0.1"/>
+  </states>
+  <states name="PowerSave_LowPower_Home">
+    <transitions name="PowerSave_LowPower_Home_2_PowerSave_UnderCharge_Home" targetState="PowerSave_UnderCharge_Home" rate="0.53"/>
+    <transitions name="PowerSave_LowPower_Home_2_PowerSave_LowPower_OpenAir_hs" targetState="PowerSave_LowPower_OpenAir_hs" rate="0.1"/>
+  </states>
+  <states name="PowerSave_UnderCharge_Home">
+    <transitions name="PowerSave_UnderCharge_Home_2_Normal_HighPower_Home" targetState="Normal_HighPower_Home" rate="0.5"/>
+    <transitions name="PowerSave_UnderCharge_Home_2_PowerSave_LowPower_OpenAir_hs" targetState="PowerSave_LowPower_OpenAir_hs" rate="0.1"/>
+  </states>
+  <states name="Normal_HighPower_OpenAir_hs">
+    <transitions name="Normal_HighPower_OpenAir_hs_2_PowerSave_LowPower_OpenAir_hs" targetState="PowerSave_LowPower_OpenAir_hs" rate="0.18"/>
+    <transitions name="Normal_HighPower_OpenAir_hs_2_Normal_HighPower_Surgery" targetState="Normal_HighPower_Surgery" rate="2.0"/>
+  </states>
+  <states name="PowerSave_LowPower_OpenAir_hs">
+    <transitions name="PowerSave_LowPower_OpenAir_hs_2_PowerSave_UnderCharge_OpenAir_hs" targetState="PowerSave_UnderCharge_OpenAir_hs" rate="0.53"/>
+    <transitions name="PowerSave_LowPower_OpenAir_hs_2_PowerSave_LowPower_Surgery" targetState="PowerSave_LowPower_Surgery" rate="2.0"/>
+  </states>
+  <states name="PowerSave_UnderCharge_OpenAir_hs">
+    <transitions name="PowerSave_UnderCharge_OpenAir_hs_2_Normal_HighPower_OpenAir_hs" targetState="Normal_HighPower_OpenAir_hs" rate="0.5"/>
+    <transitions name="PowerSave_UnderCharge_OpenAir_hs_2_PowerSave_UnderCharge_Surgery" targetState="PowerSave_UnderCharge_Surgery" rate="2.0"/>
+  </states>
+  <states name="Normal_HighPower_Surgery">
+    <transitions name="Normal_HighPower_Surgery_2_PowerSave_LowPower_Surgery" targetState="PowerSave_LowPower_Surgery" rate="0.18"/>
+    <transitions name="Normal_HighPower_Surgery_2_Normal_HighPower_OpenAir_sp" targetState="Normal_HighPower_OpenAir_sp" rate="0.25"/>
+    <transitions name="Normal_HighPower_Surgery_2_Normal_HighPower_OpenAir_sh" targetState="Normal_HighPower_OpenAir_sh" rate="0.13"/>
+  </states>
+  <states name="PowerSave_LowPower_Surgery">
+    <transitions name="PowerSave_LowPower_Surgery_2_PowerSave_UnderCharge_Surgery" targetState="PowerSave_UnderCharge_Surgery" rate="0.53"/>
+    <transitions name="PowerSave_LowPower_Surgery_2_PowerSave_LowPower_OpenAir_sp" targetState="PowerSave_LowPower_OpenAir_sp" rate="0.25"/>
+    <transitions name="PowerSave_LowPower_Surgery_2_PowerSave_LowPower_OpenAir_sh" targetState="PowerSave_LowPower_OpenAir_sh" rate="0.13"/>
+  </states>
+  <states name="PowerSave_UnderCharge_Surgery">
+    <transitions name="PowerSave_UnderCharge_Surgery_2_Normal_HighPower_Surgery" targetState="Normal_HighPower_Surgery" rate="0.5"/>
+    <transitions name="PowerSave_UnderCharge_Surgery_2_PowerSave_LowPower_OpenAir_sp" targetState="PowerSave_LowPower_OpenAir_sp" rate="0.25"/>
+  </states>
+  <states name="Normal_HighPower_OpenAir_sp">
+    <transitions name="Normal_HighPower_OpenAir_sp_2_PowerSave_LowPower_OpenAir_sp" targetState="PowerSave_LowPower_OpenAir_sp" rate="0.18"/>
+    <transitions name="Normal_HighPower_OpenAir_sp_2_Normal_HighPower_PatientHome" targetState="Normal_HighPower_PatientHome" rate="3.0"/>
+  </states>
+  <states name="PowerSave_LowPower_OpenAir_sp">
+    <transitions name="PowerSave_LowPower_OpenAir_sp_2_PowerSave_UnderCharge_OpenAir_sp" targetState="PowerSave_UnderCharge_OpenAir_sp" rate="0.53"/>
+    <transitions name="PowerSave_LowPower_OpenAir_sp_2_PowerSave_LowPower_PatientHome" targetState="PowerSave_LowPower_PatientHome" rate="3.0"/>
+  </states>
+  <states name="PowerSave_UnderCharge_OpenAir_sp">
+    <transitions name="PowerSave_UnderCharge_OpenAir_sp_2_Normal_HighPower_OpenAir_sp" targetState="Normal_HighPower_OpenAir_sp" rate="0.5"/>
+    <transitions name="PowerSave_UnderCharge_OpenAir_sp_2_PowerSave_UnderCharge_PatientHome" targetState="PowerSave_UnderCharge_PatientHome" rate="3.0"/>
+  </states>
+  <states name="Normal_HighPower_PatientHome">
+    <transitions name="Normal_HighPower_PatientHome_2_PowerSave_LowPower_PatientHome" targetState="PowerSave_LowPower_PatientHome" rate="0.18"/>
+    <transitions name="Normal_HighPower_PatientHome_2_Normal_HighPower_OpenAir_ps" targetState="Normal_HighPower_OpenAir_ps" rate="12.0"/>
+  </states>
+  <states name="PowerSave_LowPower_PatientHome">
+    <transitions name="PowerSave_LowPower_PatientHome_2_PowerSave_UnderCharge_PatientHome" targetState="PowerSave_UnderCharge_PatientHome" rate="0.53"/>
+    <transitions name="PowerSave_LowPower_PatientHome_2_PowerSave_LowPower_OpenAir_ps" targetState="PowerSave_LowPower_OpenAir_ps" rate="12.0"/>
+  </states>
+  <states name="PowerSave_UnderCharge_PatientHome">
+    <transitions name="PowerSave_UnderCharge_PatientHome_2_Normal_HighPower_PatientHome" targetState="Normal_HighPower_PatientHome" rate="0.5"/>
+    <transitions name="PowerSave_UnderCharge_PatientHome_2_PowerSave_UnderCharge_OpenAir_ps" targetState="PowerSave_UnderCharge_OpenAir_ps" rate="12.0"/>
+  </states>
+  <states name="Normal_HighPower_OpenAir_ps">
+    <transitions name="Normal_HighPower_OpenAir_ps_2_PowerSave_LowPower_OpenAir_ps" targetState="PowerSave_LowPower_OpenAir_ps" rate="0.18"/>
+    <transitions name="Normal_HighPower_OpenAir_ps_2_Normal_HighPower_Surgery" targetState="Normal_HighPower_Surgery" rate="3.0"/>
+  </states>
+  <states name="PowerSave_LowPower_OpenAir_ps">
+    <transitions name="PowerSave_LowPower_OpenAir_ps_2_PowerSave_UnderCharge_OpenAir_ps" targetState="PowerSave_UnderCharge_OpenAir_ps" rate="0.53"/>
+    <transitions name="PowerSave_LowPower_OpenAir_ps_2_PowerSave_LowPower_Surgery" targetState="PowerSave_LowPower_Surgery" rate="3.0"/>
+  </states>
+  <states name="PowerSave_UnderCharge_OpenAir_ps">
+    <transitions name="PowerSave_UnderCharge_OpenAir_ps_2_Normal_HighPower_OpenAir_ps" targetState="Normal_HighPower_OpenAir_ps" rate="0.5"/>
+    <transitions name="PowerSave_UnderCharge_OpenAir_ps_2_PowerSave_UnderCharge_Surgery" targetState="PowerSave_UnderCharge_Surgery" rate="3.0"/>
+  </states>
+  <states name="Normal_HighPower_OpenAir_sh">
+    <transitions name="Normal_HighPower_OpenAir_sh_2_PowerSave_LowPower_OpenAir_sh" targetState="PowerSave_LowPower_OpenAir_sh" rate="0.18"/>
+    <transitions name="Normal_HighPower_OpenAir_sh_2_Normal_HighPower_Home" targetState="Normal_HighPower_Home" rate="1.0"/>
+  </states>
+  <states name="PowerSave_LowPower_OpenAir_sh">
+    <transitions name="PowerSave_LowPower_OpenAir_sh_2_PowerSave_LowPower_Home" targetState="PowerSave_LowPower_Home" rate="1.0"/>
+  </states>
+</man:Manager>

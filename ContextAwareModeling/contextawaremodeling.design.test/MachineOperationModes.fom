@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<man:Manager xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:man="at.ac.tuwien.ame.ss2016.man" name="MachineOperationModes" start="Producing">
+  <states name="Producing">
+    <transitions name="change_to_maintenance" targetState="Self-Maintenance" rate="0.12"/>
+  </states>
+  <states name="Self-Maintenance">
+    <transitions name="change_to_producing" targetState="Producing" rate="6.0"/>
+  </states>
+</man:Manager>
